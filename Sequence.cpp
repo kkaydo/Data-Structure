@@ -221,9 +221,6 @@ double Sequence::stddev()
 //followed by the contents of its constant Sequence reference parameter
 Sequence& Sequence::concatenate(const Sequence& sq)
 {
-	
-	//int new_size = current_size + sq.current_size;
-	//double* new_arr = arr;
 	Sequence *new_sq = new Sequence();
 
 	new_sq->insert(arr, current_size);
