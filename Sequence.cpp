@@ -163,8 +163,8 @@ double Sequence::mean()
 double Sequence::median()
 {
 	if (current_size == 0) {
-
-		return 0;
+		double median = 0;
+		return median;
 	}
 	double median;
 	//make a new array which can be changed the order of elements
@@ -197,8 +197,8 @@ double Sequence::median()
 double Sequence::stddev()
 {
 	if (current_size == 0) {
-
-		return 0;
+		double sd = 0 ;
+		return sd;
 	}
 		double mean = 0;
 		double sum = 0;
