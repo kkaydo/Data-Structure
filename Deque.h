@@ -49,7 +49,7 @@ Deque<T>::Deque()
 }
 
 
-//copy constructor ¨C creates a deep copy of its constant Deque reference parameter
+//copy constructor Â¨C creates a deep copy of its constant Deque reference parameter
 template<class T>
 Deque<T>::Deque(const Deque<T>& dq)
 {
@@ -80,7 +80,7 @@ Deque<T>::Deque(const Deque<T>& dq)
 	}
 }
 
-//overloads the assignment operator for Deque ¨C deep copy
+//overloads the assignment operator for Deque Â¨C deep copy
 template<class T>
 Deque<T>& Deque<T>::operator=(const Deque<T>& dq)
 {
@@ -251,6 +251,7 @@ bool Deque<T>::empty()
 		return false;
 	}
 }
+
 //returns the number of items stored in the Deque
 template<class T>
 int Deque<T>::size()
