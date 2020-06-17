@@ -1,3 +1,8 @@
+//A deque (pronounced deck) is a double-ended queue. It is a data structure that supports insertion 
+//and removal at both its front and its back, but not at any other position. It combines and extends 
+//the operations of both a stack (insert at the front and remove from the front) and a queue 
+//(insert at the back, remove from the front). This assignment is to  to implement this data structure using a doubly linked list.
+
 #pragma once
 #include <iostream>
 #include <stdexcept>
