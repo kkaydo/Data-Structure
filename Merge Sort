@@ -1,0 +1,68 @@
+// iterative merge sort functions
+
+template<class T>
+void mergesort(T arr[], int n) {
+//using for loop to make subarrays
+	for (int current_size = 1;current_size < n;current_size = 2 * current_size) {
+		for (int Left_start = 0; Left_start < n - 1; Left_start += 2 * current_size) {
+			int Right_end = min(Left_start + 2 * current_size - 1, n - 1);
+			int Separate = min(Left_start + current_size - 1, n - 1);
+			int left_size = Separate-Left_start+1;
+			int right_size = Right_end - Separate;
+			int Right_start = Separate + 1;
+			merge(arr, Left_start, Right_start, left_size, right_size);
+		}
+
+	}
+	
+}
+
+template<class T>
+void merge(T arr[],int lstart,int rstart,int lsize,int rsize) {
+	int count = 0;
+	int i = 0;
+	int l = 0;
+	int r = 0;
+	int temp_size = lsize + rsize;
+	T* temp = NULL;
+	temp = new T[temp_size];
+  
+  //merge left array and right array
+	while (l<lsize || r<rsize) {
+		if (l == lsize) {
+			temp[i] = arr[rstart+r];
+			r++;
+		}
+		else if (r == rsize) {
+			temp[i] = arr[lstart+l];
+			l++;
+		}
+		else if (l < lsize && r < rsize) {
+		    if (arr[lstart+l] <= arr[rstart+r]) {
+			    temp[i] = arr[lstart + l];
+			    l++;
+		    }
+		    else{
+			    temp[i] = arr[rstart + r];
+			    r++;
+		    }
+	    }
+		i++;
+	}
+  
+	for (int j=0;j < temp_size;++j) {
+		arr[lstart + j] = temp[j];
+	}
+  
+ //deallocate memory
+	delete[] temp;
+}
+
+int min(int a, int b) {
+	if (a <= b) {
+		return a;
+	}
+	else {
+		return b;
+	}
+}
